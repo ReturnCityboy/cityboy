@@ -23,6 +23,7 @@ public class Home : MonoBehaviour
         //저장할 데이터를 저장(game Manager가 처리)
         //홈 씬 이동
         SceneManager.LoadScene("InGame");
+        //깃테스트
     }
 }
 
