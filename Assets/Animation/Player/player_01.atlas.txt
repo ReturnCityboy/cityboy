@@ -1,0 +1,83 @@
+
+player_01.png
+size: 368,368
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+player_01_body
+  rotate: false
+  xy: 2, 2
+  size: 79, 120
+  orig: 83, 122
+  offset: 1, 1
+  index: -1
+player_01_foot_l
+  rotate: false
+  xy: 319, 104
+  size: 40, 96
+  orig: 45, 102
+  offset: 3, 5
+  index: -1
+player_01_foot_r
+  rotate: false
+  xy: 83, 21
+  size: 51, 101
+  orig: 58, 105
+  offset: 2, 2
+  index: -1
+player_01_hand_l
+  rotate: true
+  xy: 201, 4
+  size: 49, 99
+  orig: 54, 101
+  offset: 1, 1
+  index: -1
+player_01_hand_l2
+  rotate: false
+  xy: 136, 36
+  size: 63, 86
+  orig: 66, 88
+  offset: 1, 1
+  index: -1
+player_01_hand_r
+  rotate: true
+  xy: 208, 154
+  size: 46, 109
+  orig: 55, 116
+  offset: 8, 1
+  index: -1
+player_01_hand_r2
+  rotate: true
+  xy: 208, 105
+  size: 47, 104
+  orig: 49, 106
+  offset: 1, 1
+  index: -1
+player_01_head
+  rotate: false
+  xy: 2, 124
+  size: 204, 242
+  orig: 208, 262
+  offset: 1, 2
+  index: -1
+player_01_leg_l
+  rotate: false
+  xy: 304, 12
+  size: 40, 90
+  orig: 45, 93
+  offset: 3, 2
+  index: -1
+player_01_leg_r
+  rotate: true
+  xy: 201, 55
+  size: 48, 101
+  orig: 50, 108
+  offset: 1, 6
+  index: -1
+player_01_weapon
+  rotate: false
+  xy: 208, 202
+  size: 145, 164
+  orig: 147, 222
+  offset: 1, 3
+  index: -1

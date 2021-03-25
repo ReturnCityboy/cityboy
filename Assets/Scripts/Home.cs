@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Home : MonoBehaviour
 {
-    
+    public GameObject characterPopup;
     void Start()
     {
-        
+        characterPopup.SetActive(false);
     }
 
     
@@ -24,6 +24,13 @@ public class Home : MonoBehaviour
         //홈 씬 이동
         SceneManager.LoadScene("InGame");
         //깃테스트
+    }
+    public void ClickStartButton()
+    {
+    
+            characterPopup.SetActive(true);
+   
+       
     }
 }
 
