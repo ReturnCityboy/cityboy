@@ -29,13 +29,13 @@ public class GameManager : MonoBehaviour
         Ui.Instance.OnOffResult(false);
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         
     }
 
-    public void Fail()
+      public void Fail()
     {
         isFail = true;
         Ui.Instance.OnOffResult(true);

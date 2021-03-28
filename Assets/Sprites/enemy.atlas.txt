@@ -1,0 +1,69 @@
+
+enemy.png
+size: 582,582
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+enemy_01_head
+  rotate: true
+  xy: 315, 178
+  size: 134, 162
+  orig: 136, 164
+  offset: 1, 1
+  index: -1
+enemy_02_hsndr
+  rotate: true
+  xy: 312, 314
+  size: 132, 228
+  orig: 134, 230
+  offset: 1, 1
+  index: -1
+enemy_03_armr
+  rotate: true
+  xy: 312, 448
+  size: 132, 247
+  orig: 134, 249
+  offset: 1, 1
+  index: -1
+enemy_04_body
+  rotate: true
+  xy: 2, 7
+  size: 244, 311
+  orig: 246, 314
+  offset: 1, 2
+  index: -1
+enemy_05_arml
+  rotate: false
+  xy: 2, 253
+  size: 308, 327
+  orig: 310, 329
+  offset: 1, 1
+  index: -1
+enemy_06_thighsr
+  rotate: false
+  xy: 430, 2
+  size: 67, 112
+  orig: 69, 166
+  offset: 1, 1
+  index: -1
+enemy_07_legr
+  rotate: true
+  xy: 315, 13
+  size: 163, 113
+  orig: 165, 121
+  offset: 1, 1
+  index: -1
+enemy_08_thighsl
+  rotate: true
+  xy: 479, 116
+  size: 80, 97
+  orig: 82, 103
+  offset: 1, 1
+  index: -1
+enemy_09_legl
+  rotate: false
+  xy: 479, 198
+  size: 93, 114
+  orig: 157, 121
+  offset: 63, 1
+  index: -1
