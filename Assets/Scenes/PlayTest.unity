@@ -175,7 +175,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: 
+  _animationName: idle
   loop: 1
   timeScale: 1
 --- !u!23 &2925332
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1622773773}
+      - m_Target: {fileID: 0}
         m_MethodName: ClickRunATT
         m_Mode: 1
         m_Arguments:
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1622773773}
+      - m_Target: {fileID: 0}
         m_MethodName: ClickRunBTN
         m_Mode: 1
         m_Arguments:
@@ -951,7 +951,6 @@ GameObject:
   - component: {fileID: 1622773771}
   - component: {fileID: 1622773770}
   - component: {fileID: 1622773769}
-  - component: {fileID: 1622773773}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1057,19 +1056,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1622773773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622773768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfec415e58e45ee41827662e6daf7a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAni: {fileID: 0}
 --- !u!1 &1943015872
 GameObject:
   m_ObjectHideFlags: 0
