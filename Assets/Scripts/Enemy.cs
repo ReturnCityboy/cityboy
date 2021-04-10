@@ -7,10 +7,7 @@ using Spine.Unity;
 
 public class Enemy : MonoBehaviour
 {
-    private Transform transform;
-    private NavMeshAgent nvAgent;
-
-
+    
     public Player player;//공격대상
     public float range = 10f;//추적용
     public float attackrange = 5f;//공격용
@@ -27,22 +24,27 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        transform = this.gameObject.GetComponent<Transform>();
+       
         player = GameObject.FindWithTag
             ("Player").GetComponent <Player >();
-        nvAgent = this.gameObject.GetComponent<NavMeshAgent>();
+        EnemyAni = gameObject.GetComponent<SkeletonAnimation>();
+
+        
     }
 
     void Start()
     {
-        nvAgent.destination = player.transform.position;
+        
         StartCoroutine (CheckState());
-        StartCoroutine(CheckStateToAction());
+        
     }
 
     void Update()
     {
-       
+        if (currentState == CurrentState.IDLE )
+        {
+            ChangeAni(currentState);
+        }
     }
     IEnumerator CheckState()
     {
@@ -50,52 +52,42 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
             float dis = Vector3.Distance(player.transform.position, transform.position);
-            if (dis <= attackrange)
+            if (dis <= attackrange)//공격범위 세분화해서 원거리근거리를 나눌수있다
             {
+                //멈춤,공격시작
                 currentState = CurrentState.ATTACK;
+                
+                Debug.Log("공격");
             }
             else if (dis <= range)
             {
                 currentState = CurrentState.MOVE;
+                
+               Debug.Log("탐색");
+                //팀섹 플레이어에게 갈수있게
             }
             else
             {
                 currentState = CurrentState.IDLE;
+                RandomIdle();
+                Debug.Log("정지");
+                //할일찾기
+
 
             }
+            ChangeAni(currentState);
         }
        
     }
-    IEnumerator CheckStateToAction()
-    {
-        while (isPlayer)
-        {
-            switch (currentState)
-            {
-                case CurrentState.IDLE:
-                   // nvAgent.Stop();
-                    break;
 
-                case CurrentState.MOVE:
-                    nvAgent.destination = player.transform.position;
-                   // nvAgent.Resume();
-                    break;
-
-                case CurrentState.ATTACK:
-                    break;
-
-            }
-
-            yield return null;
-        }
+    public void RandomIdle()
+    { 
+    
     }
 
     public void ChangeAni(CurrentState cur)
     {
-        if (this.currentState == cur)
-        {
-            return;
-        }
+       
 
         if (EnemyAni == null)
         {
@@ -121,7 +113,23 @@ public class Enemy : MonoBehaviour
                 EnemyAni.timeScale = 1f;
                 break;
 
-            case CurrentState.RUN:
+            case CurrentState.MOVE:
+
+                /*int r = Random.Range(0, 3);
+                if (r == 0)
+                {
+                    EnemyAni.AnimationName = "run";
+                }
+                else (r == 1)
+                {
+                    EnemyAni.AnimationName = "walk";
+                }
+                else if ()
+                {
+                    EnemyAni.AnimationName = "jump";
+                }*/
+
+
                 EnemyAni.AnimationName = "run";
                 EnemyAni.timeScale = 1f;
                 break;

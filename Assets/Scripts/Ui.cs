@@ -18,17 +18,18 @@ public class Ui : MonoBehaviour
             return _instance;
         }
     }
-    public Slider hpSlider;
-    public GameObject result;
-
+    //public Slider hpSlider;
+    //public GameObject result;
+    public Player player; //컨트롤 대상
     private void Awake()
     {
         _instance = this;
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -36,14 +37,15 @@ public class Ui : MonoBehaviour
 
     }
     //호출 시점: 게임시작, 캐릭터 데미지
+    //Todo: 당장 쓰지 않아서 막아둠
     public void UpdateHpbar(float hp, float hpMax)
     {
-        hpSlider.value = hp / hpMax;
+        // hpSlider.value = hp / hpMax;
     }
 
     public void OnOffResult(bool on)
     {
-        result.SetActive(on);
+        //result.SetActive(on);
     }
 
     public void ClickHomeButton()
@@ -55,5 +57,18 @@ public class Ui : MonoBehaviour
     public void ClickContinueButton()
     {
         //캐릭터 선택창 나옴
+    }
+
+    public void ClickRunBTN()
+    {
+        player.ChangeAni(Player.ANI.RUN);
+        Debug.Log("런");
+        //이동
+    }
+    public void ClickAttackBTN()
+    {
+        //이동을 멈춤
+        player.ChangeAni(Player.ANI.ATTACK);
+        //player클래스에 Attack메소드 호출
     }
 }
