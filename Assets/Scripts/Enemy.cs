@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
             {
                 currentState = CurrentState.MOVE;
                 
-               Debug.Log("탐색");
+               //Debug.Log("탐색");
                 //팀섹 플레이어에게 갈수있게
             }
             else
