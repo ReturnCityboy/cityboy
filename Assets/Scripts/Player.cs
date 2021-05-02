@@ -6,24 +6,16 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    private static Player _instance;
-    public static Player Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = new Player();
-            }
-            return _instance;
-        }
-    }
+    
+    
+
+    public float speed = 5f;
     private void Awake()
     {
-        _instance = this;
+        
     }
     
-    public SkeletonAnimation player;
+    public SkeletonAnimation playerAni;
     public enum ANI
     {
         IDLE,
@@ -42,7 +34,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-
+        playerAni = gameObject.GetComponent<SkeletonAnimation>();
     }
 
     void Update()
@@ -56,7 +48,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (player == null)
+        if (playerAni == null)
         {
             Debug.Log("애니없음");
             return;
@@ -66,53 +58,53 @@ public class Player : MonoBehaviour
         {
 
             case ANI.IDLE:
-                player.AnimationName = "idle";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "idle";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.DIE:
-                player.AnimationName = "die";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "die";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.ATTACK:
-                player.AnimationName = "attack";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "attack";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.RUN:
-                player.AnimationName = "run";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "run";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.JUMP:
-                player.AnimationName = "jump";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "jump";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.JUMPATTACK:
-                player.AnimationName = "jumpattack";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "jumpattack";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.DAMAGE:
-                player.AnimationName = "damage";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "damage";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.DOWN:
-                player.AnimationName = "down";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "down";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.SPECIAL:
-                player.AnimationName = "special";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "special";
+                playerAni.timeScale = 1f;
                 break;
 
             case ANI.WALK:
-                player.AnimationName = "walk";
-                player.timeScale = 1f;
+                playerAni.AnimationName = "walk";
+                playerAni.timeScale = 1f;
                 break;
 
 
