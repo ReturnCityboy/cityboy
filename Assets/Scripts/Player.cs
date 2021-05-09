@@ -58,57 +58,62 @@ public class Player : MonoBehaviour
         {
 
             case ANI.IDLE:
-                playerAni.AnimationName = "idle";
-                playerAni.timeScale = 1f;
+                if (!playerAni.state.GetCurrent(0).IsComplete)
+                    return;
+                playerAni.state.SetAnimation(0,"idle",true);
+                playerAni.timeScale = 1f;       
                 break;
 
             case ANI.DIE:
-                playerAni.AnimationName = "die";
-                playerAni.timeScale = 1f;
+                playerAni.state.SetAnimation(0, "die", false);
+                playerAni.timeScale = 1f; 
+
                 break;
 
             case ANI.ATTACK:
-                playerAni.AnimationName = "attack";
-                playerAni.timeScale = 1f;
+                playerAni.state.SetAnimation(0, "attack", false);
+                playerAni.timeScale = 1f; 
+                
                 break;
 
             case ANI.RUN:
-                playerAni.AnimationName = "run";
+                playerAni.state.SetAnimation(0, "run", false);
                 playerAni.timeScale = 1f;
                 break;
 
             case ANI.JUMP:
-                playerAni.AnimationName = "jump";
+                playerAni.state.SetAnimation(0, "jump", false);
                 playerAni.timeScale = 1f;
                 break;
 
             case ANI.JUMPATTACK:
-                playerAni.AnimationName = "jumpattack";
+                playerAni.state.SetAnimation(0, "jumpattack", false);
                 playerAni.timeScale = 1f;
                 break;
 
             case ANI.DAMAGE:
-                playerAni.AnimationName = "damage";
+                playerAni.state.SetAnimation(0, "damage", false);
                 playerAni.timeScale = 1f;
                 break;
 
             case ANI.DOWN:
-                playerAni.AnimationName = "down";
+                playerAni.state.SetAnimation(0, "down", false);
                 playerAni.timeScale = 1f;
                 break;
 
             case ANI.SPECIAL:
-                playerAni.AnimationName = "special";
+                playerAni.state.SetAnimation(0, "special", false);
                 playerAni.timeScale = 1f;
                 break;
 
             case ANI.WALK:
-                playerAni.AnimationName = "walk";
+                playerAni.state.SetAnimation(0, "walk", false);
                 playerAni.timeScale = 1f;
                 break;
 
 
         }
+        this.ani = ani;
     }
 
     public void Attack()

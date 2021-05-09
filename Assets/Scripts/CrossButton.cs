@@ -10,7 +10,10 @@ public class CrossButton : MonoBehaviour
     public float speed = 1f;//크로스버튼 클래스안에 메소드를 돌릴려고 쓴 변수
     //public bool canMove = false;
     public float step = 0.3f;//버튼누를때마다 적용시키기위한 (Time.deltataime대신)
-
+   
+    
+    //public Text crossbtn; //테스트 버튼용 텍스트
+    
     public float lange = 1f;
 
     [Header("방향키")]
@@ -34,7 +37,7 @@ public class CrossButton : MonoBehaviour
         
     }
 
-    public void ClickButton(int num)
+    public void ClickButton(int num )
     {
         if (true)
         {
@@ -47,11 +50,19 @@ public class CrossButton : MonoBehaviour
                 player.ChangeAni(Player.ANI.RUN);
                 //플레이어위치 벡터에 위로 얼마만큼 더해라
                 //Debug.Log("위로");
+
+                //Debug.Log("위");//테스트
+                //crossbtn.text = "위";//테스트
+
                 break;
             case 1:
                 //player.transform.position += Vector3.down * speed * step;
                 Debug.Log("d");//내려갈맵이아니라서 일단 디버그찍음
                 //아래로 내려가고 점프모션
+
+                //Debug.Log("아래");//테스트
+                //crossbtn.text = "아래";//테스트
+
                 break;
             case 2:
                 player.transform.position += Vector3.right * speed * step;
@@ -59,14 +70,21 @@ public class CrossButton : MonoBehaviour
                 player.ChangeAni(Player.ANI.RUN);
                 //Debug.Log("우로");
                 //오른쪽으로가고 점프모션
-                break;
+
+
+                break; 
+
             case 3:
                 player.transform.position += Vector3.left * speed * step;
                 player.transform.localScale = new Vector3(-1,1,0);
                 player.ChangeAni(Player.ANI.RUN);
-                
+
                 //Debug.Log("좌로");
                 //왼쪽으로가고 점프모션
+
+                //Debug.Log("죄");//테스트
+                //crossbtn.text = "좌";//테스트
+
                 break;
         }
 
