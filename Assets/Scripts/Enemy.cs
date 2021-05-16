@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public float attackrange = 5f;//공격용
     public bool playerDir = true;//공격대상이 범위에들어왓는지
     public bool isPlayer = true;//플레이어 생사 여부
-
+    public float step = 0.1f;
     public int hp = 100;//enemy hp
     public int power = 100;//enemy power
     public float speed = 10f;//enemy speed
@@ -80,6 +80,14 @@ public class Enemy : MonoBehaviour
        
     }
 
+    public void EnemyMove()
+    {
+       transform.position += Vector3.left * speed * step; 
+
+    }
+
+
+    
     public void RandomIdle()
     { 
     

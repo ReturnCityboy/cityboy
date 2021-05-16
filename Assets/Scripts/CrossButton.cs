@@ -56,14 +56,11 @@ public class CrossButton : MonoBehaviour
 
                 break;
             case 1:
-                //player.transform.position += Vector3.down * speed * step;
+                player.ChangeAni(Player.ANI.RUN);
                 Debug.Log("d");//내려갈맵이아니라서 일단 디버그찍음
-                //아래로 내려가고 점프모션
-
-                //Debug.Log("아래");//테스트
-                //crossbtn.text = "아래";//테스트
-
                 break;
+
+                
             case 2:
                 player.transform.position += Vector3.right * speed * step;
                 player.transform.localScale = new Vector3(1, 1, 0);

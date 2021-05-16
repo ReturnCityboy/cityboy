@@ -10,11 +10,7 @@ public class Player : MonoBehaviour
     
 
     public float speed = 5f;
-    private void Awake()
-    {
-        
-    }
-    
+
     public SkeletonAnimation playerAni;
     public enum ANI
     {
@@ -31,12 +27,17 @@ public class Player : MonoBehaviour
     }
     ANI ani = ANI.IDLE;
 
-
+    private void Awake()
+    {
+        
+    }
+    
+    
     void Start()
     {
         playerAni = gameObject.GetComponent<SkeletonAnimation>();
+        ChangeAni(ANI.IDLE);
     }
-
     void Update()
     {
 
@@ -77,7 +78,7 @@ public class Player : MonoBehaviour
                 break;
 
             case ANI.RUN:
-                playerAni.state.SetAnimation(0, "run", false);
+                playerAni.state.SetAnimation(0, "run", true);
                 playerAni.timeScale = 1f;
                 break;
 
@@ -113,7 +114,7 @@ public class Player : MonoBehaviour
 
 
         }
-        this.ani = ani;
+        //this.ani = ani;
     }
 
     public void Attack()
